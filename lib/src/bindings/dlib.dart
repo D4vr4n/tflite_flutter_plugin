@@ -35,8 +35,6 @@ DynamicLibrary tflitelib = () {
   } else if (Platform.isIOS) {
     return DynamicLibrary.process();
   } else {
-    return DynamicLibrary.open(
-        Directory(Platform.resolvedExecutable).parent.path +
-            '/blobs/${binaryName}');
+    return DynamicLibrary.open(Directory.current.path + '/blobs/${binaryName}');
   }
 }();
